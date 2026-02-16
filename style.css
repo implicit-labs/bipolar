@@ -113,19 +113,22 @@ p { color: var(--gray-11); font-size: 0.9rem; }
 .flow {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  gap: 6px;
+  flex-wrap: nowrap;
   margin-bottom: 32px;
+  overflow-x: auto;
 }
 
 .flow-step {
   background: var(--gray-3);
   box-shadow: 0 0 0 1px var(--gray-4);
   border-radius: 6px;
-  padding: 8px 14px;
+  padding: 6px 12px;
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--gray-11);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .flow-step.hi {
@@ -134,7 +137,7 @@ p { color: var(--gray-11); font-size: 0.9rem; }
   color: var(--blue);
 }
 
-.flow-arrow { color: var(--gray-7); font-size: 0.9rem; }
+.flow-arrow { color: var(--gray-7); font-size: 0.8rem; flex-shrink: 0; }
 
 /* ─── Section Cards ─── */
 
@@ -555,8 +558,8 @@ p { color: var(--gray-11); font-size: 0.9rem; }
   .persona-grid { grid-template-columns: 1fr; }
   .faq-pair { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); }
-  .flow { gap: 6px; }
-  .flow-step { padding: 6px 10px; font-size: 0.75rem; }
+  .flow { gap: 4px; }
+  .flow-step { padding: 5px 8px; font-size: 0.72rem; }
 }
 
 /* ─── Reduced Motion ─── */
