@@ -542,6 +542,39 @@ p { color: var(--gray-11); font-size: 0.9rem; }
   background: var(--gray-7);
 }
 
+/* ─── Eval Results ─── */
+
+.eval-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.eval-stat {
+  background: var(--gray-3);
+  box-shadow: 0 0 0 1px var(--gray-4);
+  border-radius: 8px;
+  padding: 16px 14px;
+  text-align: center;
+}
+
+.eval-stat-num {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--green);
+  line-height: 1;
+}
+
+.eval-stat-label {
+  font-size: 0.7rem;
+  color: var(--gray-9);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 6px;
+}
+
 /* ─── Footer ─── */
 
 .footer {

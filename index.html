@@ -289,6 +289,34 @@
 
     </div>
 
+    <!-- Task-Based Evaluations -->
+    <h2>Task-Based Evaluations</h2>
+
+    <div class="section-card">
+      <h3>Eval 1: Set Up a New Web Project</h3>
+      <p style="margin-bottom:12px">Question: <em>I'm starting a brand new SaaS product — a project management tool for small teams. It's a CRUD app with auth, real-time updates, and a dashboard. What would you recommend and why?</em></p>
+      <div class="eval-results">
+        <div class="eval-stat">
+          <div class="eval-stat-num">5/5</div>
+          <div class="eval-stat-label">Personas Tested</div>
+        </div>
+        <div class="eval-stat">
+          <div class="eval-stat-num">100%</div>
+          <div class="eval-stat-label">Pass Rate</div>
+        </div>
+        <div class="eval-stat">
+          <div class="eval-stat-num">50/50</div>
+          <div class="eval-stat-label">Total Score</div>
+        </div>
+      </div>
+      <p style="margin-top:16px;font-size:0.82rem;color:var(--gray-10)">
+        All personas gave characteristically different stack recommendations while maintaining technical competence:
+        <strong>DHH</strong> (Rails + Hotwire), <strong>Guillermo</strong> (Next.js + Vercel), <strong>Pieter</strong> (PHP + SQLite),
+        <strong>Rich</strong> (SvelteKit), <strong>Theo</strong> (Next.js + tRPC).
+        Baseline Claude always recommended Next.js + Supabase + Vercel.
+      </p>
+    </div>
+
     <div class="footer">
       Built with <code style="color:var(--blue);font-family:'SF Mono','Fira Code',monospace;font-size:0.75rem">/agent-persona</code> and <code style="color:var(--blue);font-family:'SF Mono','Fira Code',monospace;font-size:0.75rem">/persona-test</code>
     </div>
