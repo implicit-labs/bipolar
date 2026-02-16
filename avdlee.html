@@ -95,14 +95,126 @@
 
     <!-- Evaluation -->
     <h2>Evaluation</h2>
+    <p style="margin-bottom:16px">8 questions &middot; persona vs baseline &middot; scored on accuracy, differentiation, authenticity</p>
 
-    <div class="badge-pending">Not yet tested</div>
-    <p style="margin-top:12px;font-size:0.82rem;color:var(--gray-9)">Run <code style="color:var(--blue);font-family:'SF Mono','Fira Code',monospace;font-size:0.82rem">/persona-test avdlee</code> to evaluate this persona against calibration questions.</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">92%</div><div class="stat-label">Overall</div></div>
+      <div class="stat"><div class="stat-num">6.0</div><div class="stat-label">Direct</div></div>
+      <div class="stat"><div class="stat-num">5.3</div><div class="stat-label">Transfer</div></div>
+      <div class="stat"><div class="stat-num">5.5</div><div class="stat-label">Voice</div></div>
+    </div>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggle(this)">
+          <span class="faq-badge direct">Direct</span>
+          <span class="faq-q">SwiftUI or UIKit for new project?</span>
+          <span class="faq-score good">6/6</span>
+          <span class="faq-chevron">&#9654;</span>
+        </div>
+        <div class="faq-body"><div class="faq-inner">
+          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggle(this)">
+          <span class="faq-badge direct">Direct</span>
+          <span class="faq-q">Third-party vs Apple-native dependencies?</span>
+          <span class="faq-score good">6/6</span>
+          <span class="faq-chevron">&#9654;</span>
+        </div>
+        <div class="faq-body"><div class="faq-inner">
+          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggle(this)">
+          <span class="faq-badge direct">Direct</span>
+          <span class="faq-q">Adopt Swift 6 strict concurrency now?</span>
+          <span class="faq-score good">6/6</span>
+          <span class="faq-chevron">&#9654;</span>
+        </div>
+        <div class="faq-body"><div class="faq-inner">
+          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggle(this)">
+          <span class="faq-badge transfer">Transfer</span>
+          <span class="faq-q">App architecture for offline-first?</span>
+          <span class="faq-score good">6/6</span>
+          <span class="faq-chevron">&#9654;</span>
+        </div>
+        <div class="faq-body"><div class="faq-inner">
+          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggle(this)">
+          <span class="faq-badge transfer">Transfer</span>
+          <span class="faq-q">CI pipeline for small team?</span>
+          <span class="faq-score good">5/6</span>
+          <span class="faq-chevron">&#9654;</span>
+        </div>
+        <div class="faq-body"><div class="faq-inner">
+          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>1</span></div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggle(this)">
+          <span class="faq-badge transfer">Transfer</span>
+          <span class="faq-q">Mentoring junior iOS devs?</span>
+          <span class="faq-score good">5/6</span>
+          <span class="faq-chevron">&#9654;</span>
+        </div>
+        <div class="faq-body"><div class="faq-inner">
+          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>1</span> &middot; Authenticity <span>2</span></div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggle(this)">
+          <span class="faq-badge voice">Voice</span>
+          <span class="faq-q">Review SwiftUI view code</span>
+          <span class="faq-score good">6/6</span>
+          <span class="faq-chevron">&#9654;</span>
+        </div>
+        <div class="faq-body"><div class="faq-inner">
+          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header" onclick="toggle(this)">
+          <span class="faq-badge voice">Voice</span>
+          <span class="faq-q">Starting a new iOS project?</span>
+          <span class="faq-score good">5/6</span>
+          <span class="faq-chevron">&#9654;</span>
+        </div>
+        <div class="faq-body"><div class="faq-inner">
+          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>1</span></div>
+        </div></div>
+      </div>
+
+    </div>
 
     <div class="footer">
       <a href="index.html" class="back"><span class="back-arrow">&larr;</span> All personas</a>
     </div>
 
   </div>
+
+  <script>
+    function toggle(header) {
+      const item = header.parentElement;
+      item.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
