@@ -1,0 +1,569 @@
+/* Agent Personas — Shared Styles */
+/* Following Emil Kowalski's design engineering principles */
+
+:root {
+  --gray-1: #0a0a0a;
+  --gray-2: #111;
+  --gray-3: #161616;
+  --gray-4: #1e1e1e;
+  --gray-5: #262626;
+  --gray-6: #333;
+  --gray-7: #444;
+  --gray-8: #555;
+  --gray-9: #666;
+  --gray-10: #888;
+  --gray-11: #bbb;
+  --gray-12: #e8e8e8;
+  --green: #4ade80;
+  --green-dim: #1a2a1a;
+  --yellow: #fbbf24;
+  --yellow-dim: #2a2200;
+  --blue: #60a5fa;
+  --blue-dim: #0f1a2e;
+  --purple: #c084fc;
+  --purple-dim: #1a102a;
+  --red: #f87171;
+  --red-dim: #2a1010;
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --border-hairline: 1px;
+}
+
+@media only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi) {
+  :root { --border-hairline: 0.5px; }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--gray-1);
+  color: var(--gray-12);
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container { max-width: 720px; margin: 0 auto; padding: 48px 20px 100px; }
+
+/* ─── Typography ─── */
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gray-9);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  margin-top: 48px;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p { color: var(--gray-11); font-size: 0.9rem; }
+
+.subtitle {
+  color: var(--gray-10);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* ─── Back Nav ─── */
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gray-10);
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 32px;
+  transition: color 150ms ease;
+}
+
+@media (hover: hover) {
+  .back:hover { color: var(--gray-12); }
+}
+
+.back-arrow {
+  font-size: 0.9rem;
+  transition: transform 150ms var(--ease-out-quart);
+}
+
+@media (hover: hover) {
+  .back:hover .back-arrow { transform: translateX(-2px); }
+}
+
+/* ─── Flow Steps ─── */
+
+.flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.flow-step {
+  background: var(--gray-3);
+  box-shadow: 0 0 0 1px var(--gray-4);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gray-11);
+}
+
+.flow-step.hi {
+  background: var(--blue-dim);
+  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.2);
+  color: var(--blue);
+}
+
+.flow-arrow { color: var(--gray-7); font-size: 0.9rem; }
+
+/* ─── Section Cards ─── */
+
+.section-card {
+  background: var(--gray-2);
+  box-shadow: 0 0 0 1px var(--gray-4);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.section-card h3 { font-size: 0.9rem; margin-bottom: 6px; }
+.section-card p { font-size: 0.85rem; margin-bottom: 0; }
+.section-card code {
+  color: var(--blue);
+  font-size: 0.85rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.section-card pre {
+  color: var(--gray-10);
+  font-size: 0.8rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  line-height: 1.65;
+  margin-top: 10px;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.agents-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* ─── Persona Grid (Index) ─── */
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.persona-card {
+  background: var(--gray-2);
+  box-shadow: 0 0 0 1px var(--gray-4);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 200ms ease, background 200ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.persona-card.clickable { cursor: pointer; }
+
+@media (hover: hover) {
+  .persona-card.clickable:hover {
+    box-shadow: 0 0 0 1px var(--gray-6);
+    background: var(--gray-3);
+  }
+}
+
+.persona-card.pending { opacity: 0.45; }
+
+.persona-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.persona-card-name {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.persona-card-status {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.persona-card-status.done { background: var(--green); }
+.persona-card-status.pending { background: var(--gray-7); }
+
+.persona-card-domain {
+  font-size: 0.8rem;
+  color: var(--gray-9);
+}
+
+.persona-card-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+  font-size: 0.75rem;
+  color: var(--gray-8);
+}
+
+.persona-card-meta span {
+  font-variant-numeric: tabular-nums;
+}
+
+.persona-card-score {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* ─── Persona Detail: Bio ─── */
+
+.bio { color: var(--gray-10); font-size: 0.85rem; margin-bottom: 24px; }
+
+/* ─── Principles List ─── */
+
+.principles { margin-bottom: 8px; }
+
+.principle {
+  padding: 10px 0;
+  border-bottom: var(--border-hairline) solid var(--gray-3);
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.principle:last-child { border-bottom: none; }
+
+.principle-num {
+  color: var(--gray-8);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  width: 18px;
+}
+
+.principle-name {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--gray-12);
+}
+
+.principle-desc {
+  color: var(--gray-9);
+  font-size: 0.82rem;
+  margin-left: 4px;
+}
+
+/* ─── Aggregate Stats ─── */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 16px 0 24px;
+}
+
+.stat {
+  background: var(--gray-2);
+  box-shadow: 0 0 0 1px var(--gray-4);
+  border-radius: 8px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--green);
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  color: var(--gray-9);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+
+/* ─── FAQ Accordion ─── */
+
+.faq { margin-bottom: 8px; }
+
+.faq-item {
+  background: var(--gray-2);
+  box-shadow: 0 0 0 1px var(--gray-4);
+  border-radius: 10px;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 150ms ease;
+}
+
+@media (hover: hover) {
+  .faq-header:hover { background: var(--gray-3); }
+}
+
+.faq-badge {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.faq-badge.direct { background: var(--green-dim); color: var(--green); }
+.faq-badge.transfer { background: var(--purple-dim); color: var(--purple); }
+.faq-badge.voice { background: var(--blue-dim); color: var(--blue); }
+
+.faq-q {
+  font-size: 0.88rem;
+  font-weight: 500;
+  flex: 1;
+  min-width: 0;
+}
+
+.faq-score {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.faq-score.good { color: var(--green); }
+.faq-score.ok { color: var(--yellow); }
+
+.faq-chevron {
+  color: var(--gray-8);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  transition: transform 200ms var(--ease-out-quart);
+}
+
+.faq-item.open .faq-chevron { transform: rotate(90deg); }
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms var(--ease-out-quart);
+}
+
+.faq-item.open .faq-body { max-height: 800px; }
+
+.faq-inner { padding: 0 16px 16px; }
+
+.faq-scores {
+  display: flex;
+  gap: 16px;
+  font-size: 0.75rem;
+  color: var(--gray-9);
+  margin-bottom: 14px;
+}
+
+.faq-scores span { color: var(--gray-11); font-weight: 500; }
+
+.faq-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.faq-resp {
+  background: var(--gray-1);
+  box-shadow: 0 0 0 1px var(--gray-4);
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--gray-11);
+}
+
+.faq-resp.persona { box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.15); }
+
+.faq-resp-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.faq-resp-label.p { color: var(--blue); }
+.faq-resp-label.b { color: var(--gray-8); }
+
+.faq-note {
+  color: var(--yellow);
+  font-size: 0.8rem;
+  margin-top: 10px;
+  opacity: 0.85;
+}
+
+/* ─── Pipeline ─── */
+
+.pipeline-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: var(--border-hairline) solid var(--gray-3);
+  font-size: 0.88rem;
+}
+
+.pipeline-row:last-child { border-bottom: none; }
+
+.pip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pip-dot.done { background: var(--green); }
+.pip-dot.pending { background: var(--gray-7); }
+
+.pip-name { font-weight: 500; }
+.pip-domain { color: var(--gray-9); font-size: 0.8rem; margin-left: auto; }
+
+/* ─── Decision Framework ─── */
+
+.decision-list {
+  list-style: none;
+  counter-reset: decision;
+}
+
+.decision-list li {
+  counter-increment: decision;
+  padding: 10px 0;
+  border-bottom: var(--border-hairline) solid var(--gray-3);
+  font-size: 0.85rem;
+  color: var(--gray-11);
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.decision-list li:last-child { border-bottom: none; }
+
+.decision-list li::before {
+  content: counter(decision);
+  color: var(--gray-8);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  width: 18px;
+}
+
+/* ─── Workflow Cards ─── */
+
+.workflow-card {
+  background: var(--gray-2);
+  box-shadow: 0 0 0 1px var(--gray-4);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+}
+
+.workflow-card h4 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.workflow-card p {
+  font-size: 0.82rem;
+  color: var(--gray-9);
+}
+
+/* ─── Not Tested Badge ─── */
+
+.badge-pending {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gray-3);
+  box-shadow: 0 0 0 1px var(--gray-5);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  color: var(--gray-9);
+  margin-top: 16px;
+}
+
+.badge-pending::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gray-7);
+}
+
+/* ─── Footer ─── */
+
+.footer {
+  margin-top: 64px;
+  padding-top: 20px;
+  border-top: var(--border-hairline) solid var(--gray-4);
+  font-size: 0.75rem;
+  color: var(--gray-8);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 600px) {
+  .persona-grid { grid-template-columns: 1fr; }
+  .faq-pair { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .flow { gap: 6px; }
+  .flow-step { padding: 6px 10px; font-size: 0.75rem; }
+}
+
+/* ─── Reduced Motion ─── */
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-body { transition: none; }
+  .faq-chevron { transition: none; }
+  .persona-card { transition: none; }
+  .back-arrow { transition: none; }
+}

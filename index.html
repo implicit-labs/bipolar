@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Personas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <h1>Agent Personas</h1>
+    <p class="subtitle">Research a person. Extract their philosophy. Generate an AI persona. Test it.</p>
+
+    <h2>How it works</h2>
+
+    <div class="flow">
+      <div class="flow-step">Name</div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-step hi">3 research agents</div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-step">Synthesize</div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-step">Confirm</div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-step hi">Persona folder</div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-step">Test</div>
+    </div>
+
+    <div class="section-card">
+      <h3>Input</h3>
+      <p>A name. Optionally a domain and GitHub handle.</p>
+      <div style="margin-top:8px"><code>/agent-persona Julian Lehr</code></div>
+    </div>
+
+    <div class="section-card">
+      <h3>Research</h3>
+      <p>Three parallel agents search simultaneously.</p>
+      <div class="agents-row">
+        <div class="flow-step">Background &amp; Philosophy</div>
+        <div class="flow-step">GitHub &amp; Open Source</div>
+        <div class="flow-step">Content &amp; Teaching</div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>Output</h3>
+      <p>A persona folder with philosophy, workflows, principles, and calibration tests.</p>
+      <pre>~/.claude/{slug}/
+  {slug}.md              Core philosophy &middot; 5&ndash;10 principles
+  workflows/
+    {workflow}.md         Concrete workflows they follow
+  principles/
+    {principle}.md        Deep principle areas
+  tests/
+    calibration.md        Evaluation questions</pre>
+    </div>
+
+    <!-- Personas -->
+    <h2>Personas</h2>
+
+    <div class="persona-grid">
+
+      <a href="julian-lehr.html" class="persona-card clickable" aria-label="View Julian Lehr persona">
+        <div class="persona-card-header">
+          <span class="persona-card-name">Julian Lehr</span>
+          <span class="persona-card-status done" aria-label="Complete"></span>
+        </div>
+        <span class="persona-card-domain">Product Strategy &middot; Storytelling</span>
+        <div class="persona-card-meta">
+          <span>10 principles</span>
+          <span>&middot;</span>
+          <span>8 tests</span>
+          <span>&middot;</span>
+          <span class="persona-card-score">87%</span>
+        </div>
+      </a>
+
+      <a href="avdlee.html" class="persona-card clickable" aria-label="View Antoine van der Lee persona">
+        <div class="persona-card-header">
+          <span class="persona-card-name">Antoine van der Lee</span>
+          <span class="persona-card-status done" aria-label="Complete"></span>
+        </div>
+        <span class="persona-card-domain">iOS &middot; Swift</span>
+        <div class="persona-card-meta">
+          <span>10 principles</span>
+          <span>&middot;</span>
+          <span>Not yet tested</span>
+        </div>
+      </a>
+
+      <div class="persona-card pending" aria-label="Emil Kowalski — pending">
+        <div class="persona-card-header">
+          <span class="persona-card-name">Emil Kowalski</span>
+          <span class="persona-card-status pending" aria-label="Pending"></span>
+        </div>
+        <span class="persona-card-domain">Design Engineering</span>
+        <div class="persona-card-meta">
+          <span>Queued</span>
+        </div>
+      </div>
+
+      <div class="persona-card pending" aria-label="Mitchell Hashimoto — pending">
+        <div class="persona-card-header">
+          <span class="persona-card-name">Mitchell Hashimoto</span>
+          <span class="persona-card-status pending" aria-label="Pending"></span>
+        </div>
+        <span class="persona-card-domain">Systems &middot; Terminal &middot; Zig</span>
+        <div class="persona-card-meta">
+          <span>Queued</span>
+        </div>
+      </div>
+
+      <div class="persona-card pending" aria-label="Boris Cherny — pending">
+        <div class="persona-card-header">
+          <span class="persona-card-name">Boris Cherny</span>
+          <span class="persona-card-status pending" aria-label="Pending"></span>
+        </div>
+        <span class="persona-card-domain">Developer Tools &middot; Claude Code</span>
+        <div class="persona-card-meta">
+          <span>Queued</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      Built with <code style="color:var(--blue);font-family:'SF Mono','Fira Code',monospace;font-size:0.75rem">/agent-persona</code> and <code style="color:var(--blue);font-family:'SF Mono','Fira Code',monospace;font-size:0.75rem">/persona-test</code>
+    </div>
+
+  </div>
+</body>
+</html>
