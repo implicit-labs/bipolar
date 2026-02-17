@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task List - Kent Beck's TDD Approach</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #0066cc;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .back-link:hover {
+      color: #004499;
+    }
+    .back-link::before {
+      content: "← ";
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../../index.html" class="back-link">Back to Personas</a>
+    <h1>Task List</h1>
+
+    <form id="add-task-form">
+      <input
+        type="text"
+        id="task-input"
+        placeholder="Add a new task..."
+        required
+        autocomplete="off"
+      >
+      <button type="submit">Add</button>
+    </form>
+
+    <ul id="task-list"></ul>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

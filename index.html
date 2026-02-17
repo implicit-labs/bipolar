@@ -367,54 +367,48 @@
       <p style="margin-bottom:12px">Task: <em>Build a simple task list with add/delete/mark complete functionality. Make it production-ready.</em></p>
       <div class="eval-results">
         <div class="eval-stat">
-          <div class="eval-stat-num">3/3</div>
+          <div class="eval-stat-num">6/6</div>
           <div class="eval-stat-label">Implementations</div>
         </div>
         <div class="eval-stat">
-          <div class="eval-stat-num">8,160</div>
+          <div class="eval-stat-num">11,900+</div>
           <div class="eval-stat-label">Lines of Code</div>
         </div>
         <div class="eval-stat">
-          <div class="eval-stat-num">65</div>
+          <div class="eval-stat-num">83</div>
           <div class="eval-stat-label">Files Created</div>
         </div>
       </div>
       <p style="margin-top:16px;font-size:0.82rem;color:var(--gray-10);margin-bottom:12px">
-        Same task, three radically different production-ready implementations:
-        <strong>DHH</strong> (Rails aesthetic, server-rendered, minimal JS),
-        <strong>Guillermo</strong> (Next.js style, modern, optimistic UI),
-        <strong>Rich</strong> (SvelteKit approach, stats, progressive enhancement).
+        Same task, six radically different production-ready implementations:
+        <strong>DHH</strong> (Rails + Hotwire, server-rendered),
+        <strong>Guillermo</strong> (Next.js, optimistic UI),
+        <strong>Rich</strong> (SvelteKit, progressive enhancement),
+        <strong>Dan</strong> (React mental models, CDN-only),
+        <strong>Kent Beck</strong> (TDD process, git history),
+        <strong>Jason</strong> (single 6KB file, radical simplicity).
       </p>
       <div style="display:flex;gap:8px;flex-wrap:wrap">
         <a href="eval2-demos/dhh/" style="background:var(--green);box-shadow:0 0 0 1px var(--green-bright);border-radius:6px;padding:8px 16px;font-size:0.85rem;color:#000;font-weight:600;transition:all 150ms ease" onmouseover="this.style.background='var(--green-bright)'" onmouseout="this.style.background='var(--green)'">Try DHH's Demo →</a>
         <a href="eval2-demos/guillermo/" style="background:var(--green);box-shadow:0 0 0 1px var(--green-bright);border-radius:6px;padding:8px 16px;font-size:0.85rem;color:#000;font-weight:600;transition:all 150ms ease" onmouseover="this.style.background='var(--green-bright)'" onmouseout="this.style.background='var(--green)'">Try Guillermo's Demo →</a>
         <a href="eval2-demos/rich/" style="background:var(--green);box-shadow:0 0 0 1px var(--green-bright);border-radius:6px;padding:8px 16px;font-size:0.85rem;color:#000;font-weight:600;transition:all 150ms ease" onmouseover="this.style.background='var(--green-bright)'" onmouseout="this.style.background='var(--green)'">Try Rich's Demo →</a>
+        <a href="eval2-demos/dan-abramov/" style="background:var(--green);box-shadow:0 0 0 1px var(--green-bright);border-radius:6px;padding:8px 16px;font-size:0.85rem;color:#000;font-weight:600;transition:all 150ms ease" onmouseover="this.style.background='var(--green-bright)'" onmouseout="this.style.background='var(--green)'">Try Dan's Demo →</a>
+        <a href="eval2-demos/kent-beck/" style="background:var(--green);box-shadow:0 0 0 1px var(--green-bright);border-radius:6px;padding:8px 16px;font-size:0.85rem;color:#000;font-weight:600;transition:all 150ms ease" onmouseover="this.style.background='var(--green-bright)'" onmouseout="this.style.background='var(--green)'">Try Kent's Demo →</a>
+        <a href="eval2-demos/jason-fried/" style="background:var(--green);box-shadow:0 0 0 1px var(--green-bright);border-radius:6px;padding:8px 16px;font-size:0.85rem;color:#000;font-weight:600;transition:all 150ms ease" onmouseover="this.style.background='var(--green-bright)'" onmouseout="this.style.background='var(--green)'">Try Jason's Demo →</a>
       </div>
       <p style="margin-top:12px;font-size:0.75rem;color:var(--gray-9)">
-        Each demo uses localStorage so you can interact with it live. <a href="https://github.com/implicit-labs/bipolar/tree/main/evals/eval2-task-list" style="color:var(--gray-10);text-decoration:underline">View source code →</a>
+        Each demo uses localStorage so you can interact with it live. Every implementation solves the same problem differently.
       </p>
     </div>
 
-    <!-- Evaluation Documentation -->
+    <!-- Evaluation Framework -->
     <div class="section-card">
       <h3>Evaluation Framework</h3>
       <p style="margin-bottom:16px;font-size:0.9rem;color:var(--gray-10)">
         Each persona is evaluated using a dual assertion model: <strong>differentiation</strong> (does the persona answer differently than baseline Claude?) and <strong>competence</strong> (is the answer technically correct?). An eval passes only if both scores are 100%.
       </p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:16px">
-        <div style="background:var(--gray-2);border:1px solid var(--gray-4);border-radius:8px;padding:16px">
-          <div style="font-weight:600;margin-bottom:8px;color:var(--gray-12)">📋 Evaluation Procedure</div>
-          <div style="font-size:0.85rem;color:var(--gray-10);margin-bottom:12px">Complete process for designing, running, judging, and presenting persona evaluations. Includes 5 evaluation levels, quality standards, and step-by-step workflows.</div>
-          <a href="https://github.com/implicit-labs/bipolar/blob/main/evals/PROCEDURE.md" style="display:inline-block;background:var(--gray-3);border:1px solid var(--gray-5);border-radius:6px;padding:6px 12px;font-size:0.8rem;color:var(--gray-11);text-decoration:none;transition:all 150ms ease" onmouseover="this.style.background='var(--gray-4)'" onmouseout="this.style.background='var(--gray-3)'">Read PROCEDURE.md →</a>
-        </div>
-        <div style="background:var(--gray-2);border:1px solid var(--gray-4);border-radius:8px;padding:16px">
-          <div style="font-weight:600;margin-bottom:8px;color:var(--gray-12)">🎯 Evaluation Matrix</div>
-          <div style="font-size:0.85rem;color:var(--gray-10);margin-bottom:12px">Unique "proof of work" evaluations for all 18 personas. Each eval showcases what makes that persona distinctive, with differentiation and competence assertions defined.</div>
-          <a href="https://github.com/implicit-labs/bipolar/blob/main/evals/MATRIX.md" style="display:inline-block;background:var(--gray-3);border:1px solid var(--gray-5);border-radius:6px;padding:6px 12px;font-size:0.8rem;color:var(--gray-11);text-decoration:none;transition:all 150ms ease" onmouseover="this.style.background='var(--gray-4)'" onmouseout="this.style.background='var(--gray-3)'">Read MATRIX.md →</a>
-        </div>
-      </div>
-      <p style="font-size:0.8rem;color:var(--gray-9)">
-        <strong>Next evals:</strong> DHH (real-time Rails notifications), Kent Beck (TDD shopping cart), Theo (type-safe tRPC API), Emil (button micro-interaction)
+      <p style="font-size:0.85rem;color:var(--gray-9)">
+        <strong>Evaluation levels:</strong> L1 (Philosophy Q&A) → L2 (Code review/architecture) → L3 (Build something) → L4 (Cross-persona contrast) → L5 (Multi-turn consistency)
       </p>
     </div>
 
