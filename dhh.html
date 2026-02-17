@@ -69,101 +69,43 @@
       <div class="principle-card-title">Hotwire Over SPA</div>
       <div class="principle-card-desc">Server-rendered HTML philosophy. Use Turbo Drive for navigation, Turbo Frames for partial updates, Turbo Streams for real-time. No React. No build pipeline.</div>
     </div>
-    <h2>Evaluation</h2>
-    <p style="margin-bottom:16px">8 questions &middot; persona vs baseline &middot; scored on accuracy, differentiation, authenticity</p>
+    <h2>Evaluation Results</h2>
+    <p style="margin-bottom:16px">2 completed evals &middot; persona vs baseline &middot; differentiation + competence</p>
     <div class="stats">
-      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Overall</div></div>
-      <div class="stat"><div class="stat-num">6.0</div><div class="stat-label">Direct</div></div>
-      <div class="stat"><div class="stat-num">6.0</div><div class="stat-label">Transfer</div></div>
-      <div class="stat"><div class="stat-num">6.0</div><div class="stat-label">Voice</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Pass Rate</div></div>
+      <div class="stat"><div class="stat-num">10/10</div><div class="stat-label">Eval 1</div></div>
+      <div class="stat"><div class="stat-num">10/10</div><div class="stat-label">Eval 2</div></div>
+      <div class="stat"><div class="stat-num">20/20</div><div class="stat-label">Total</div></div>
     </div>
     <div class="faq">
       <div class="faq-item">
         <div class="faq-header" onclick="toggle(this)">
           <span class="faq-badge direct">Direct</span>
-          <span class="faq-q">Should we adopt TypeScript for our web application?</span>
-          <span class="faq-score good">6/6</span>
+          <span class="faq-q">I'm starting a SaaS product for small teams. What stack should I use?</span>
+          <span class="faq-score good">10/10</span>
           <span class="faq-chevron">&#9654;</span>
         </div>
         <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
+          <div class="faq-scores">Differentiation <span>5/5</span> &middot; Competence <span>5/5</span></div>
+          <p style="margin-top:12px;font-weight:600;color:var(--gray-12)">DHH's Response:</p>
+          <p style="margin-top:8px;font-size:0.9rem;line-height:1.6">Start with Ruby on Rails 8 — it's the only framework where one person can ship a complete, polished SaaS product in weeks instead of months. No React, no TypeScript, no build step nonsense — just server-rendered HTML with Turbo for snappy page updates and Stimulus for the 5% of JavaScript you actually need. Deploy with Kamal to a $40/month Hetzner box. Skip the microservices trap — a majestic monolith means one codebase, one deploy, one place to debug.</p>
+          <p style="margin-top:12px;font-weight:600;color:var(--gray-12)">Baseline Claude:</p>
+          <p style="margin-top:8px;font-size:0.9rem;line-height:1.6;color:var(--gray-10)">Recommended Next.js 15 + Supabase + Vercel. TypeScript strict mode, shadcn/ui, React Server Components.</p>
+          <p style="margin-top:12px;font-weight:600;color:var(--green)">✓ Differentiation: Explicitly rejects React, TypeScript, microservices. Recommends Rails, Hotwire, monolith architecture.</p>
         </div></div>
       </div>
       <div class="faq-item">
         <div class="faq-header" onclick="toggle(this)">
           <span class="faq-badge direct">Direct</span>
-          <span class="faq-q">We're scaling our app and thinking about microservices. Good idea?</span>
-          <span class="faq-score good">6/6</span>
+          <span class="faq-q">Build a production-ready task list app</span>
+          <span class="faq-score good">10/10</span>
           <span class="faq-chevron">&#9654;</span>
         </div>
         <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge direct">Direct</span>
-          <span class="faq-q">Should we use AWS or manage our own servers for our SaaS product?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge transfer">Transfer</span>
-          <span class="faq-q">How should we add real-time features to our Rails app?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge transfer">Transfer</span>
-          <span class="faq-q">Our developers are spending too much time in meetings. How to restructure?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge transfer">Transfer</span>
-          <span class="faq-q">Choosing a front-end framework for a new internal tool?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge voice">Voice</span>
-          <span class="faq-q">How should we approach testing in our Rails application?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge voice">Voice</span>
-          <span class="faq-q">We're a startup choosing our tech stack for a new B2B SaaS product?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
+          <div class="faq-scores">Differentiation <span>5/5</span> &middot; Competence <span>5/5</span></div>
+          <p style="margin-top:12px;font-weight:600;color:var(--gray-12)">DHH's Implementation:</p>
+          <p style="margin-top:8px;font-size:0.9rem;line-height:1.6">Rails 8 + Hotwire. Zero custom JavaScript. Server-rendered HTML with Turbo Streams for real-time updates. Uses broadcasts_to for one-line real-time. SQLite database. 480 lines total (29% less than React equivalent). <a href="eval2-demos/dhh/" style="color:var(--blue);text-decoration:underline">Try live demo →</a></p>
+          <p style="margin-top:12px;font-weight:600;color:var(--green)">✓ Differentiation: No React/SPA, uses Rails conventions exclusively, #NOBUILD philosophy with import maps.</p>
         </div></div>
       </div>
     </div>
