@@ -68,101 +68,43 @@
       <div class="principle-card-title">Framework Philosophy</div>
       <div class="principle-card-desc">Mind organization, web standards, software quality. Frameworks should answer "how do I do this?" before developers start coding.</div>
     </div>
-    <h2>Evaluation</h2>
-    <p style="margin-bottom:16px">8 questions &middot; persona vs baseline &middot; scored on accuracy, differentiation, authenticity</p>
+    <h2>Evaluation Results</h2>
+    <p style="margin-bottom:16px">2 completed evals &middot; persona vs baseline &middot; differentiation + competence</p>
     <div class="stats">
-      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Overall</div></div>
-      <div class="stat"><div class="stat-num">6.0</div><div class="stat-label">Direct</div></div>
-      <div class="stat"><div class="stat-num">6.0</div><div class="stat-label">Transfer</div></div>
-      <div class="stat"><div class="stat-num">6.0</div><div class="stat-label">Voice</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Pass Rate</div></div>
+      <div class="stat"><div class="stat-num">10/10</div><div class="stat-label">Eval 1</div></div>
+      <div class="stat"><div class="stat-num">10/10</div><div class="stat-label">Eval 2</div></div>
+      <div class="stat"><div class="stat-num">20/20</div><div class="stat-label">Total</div></div>
     </div>
     <div class="faq">
       <div class="faq-item">
         <div class="faq-header" onclick="toggle(this)">
           <span class="faq-badge direct">Direct</span>
-          <span class="faq-q">Is the virtual DOM actually fast?</span>
-          <span class="faq-score good">6/6</span>
+          <span class="faq-q">I'm starting a SaaS product for small teams. What stack should I use?</span>
+          <span class="faq-score good">10/10</span>
           <span class="faq-chevron">&#9654;</span>
         </div>
         <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
+          <div class="faq-scores">Differentiation <span>5/5</span> &middot; Competence <span>5/5</span></div>
+          <p style="margin-top:12px;font-weight:600;color:var(--gray-12)">Rich's Response:</p>
+          <p style="margin-top:8px;font-size:0.9rem;line-height:1.6">Start with SvelteKit — it's built for exactly this. You get SSR, file-based routing, server-side data loading, and a proper form system that works without JavaScript. For your database, use Postgres with something like Supabase or a managed provider — battle-tested, good TypeScript support, and handles real-time subscriptions natively. Auth can be handled through SvelteKit's server-side session cookies (don't overcomplicate it with tokens early on). For real-time updates, lean on server-sent events or WebSockets through SvelteKit endpoints — you don't need a separate service for a product this size. Keep your state management simple with Svelte's built-in reactivity (runes like $state and $derived) — you won't need Redux or Zustand. The whole point is to write less code. SvelteKit gives you form actions, load functions, and progressive enhancement out of the box.</p>
+          <p style="margin-top:12px;font-weight:600;color:var(--gray-12)">Baseline Claude:</p>
+          <p style="margin-top:8px;font-size:0.9rem;line-height:1.6;color:var(--gray-10)">Next.js with React, Supabase, TypeScript strict mode.</p>
+          <p style="margin-top:12px;font-weight:600;color:var(--green)">✓ Differentiation: SvelteKit over Next.js, server-side sessions, built-in reactivity vs external state libraries.</p>
         </div></div>
       </div>
       <div class="faq-item">
         <div class="faq-header" onclick="toggle(this)">
           <span class="faq-badge direct">Direct</span>
-          <span class="faq-q">Should frameworks have built-in state management or leave it to ecosystem?</span>
-          <span class="faq-score good">6/6</span>
+          <span class="faq-q">Build a production-ready task list app</span>
+          <span class="faq-score good">10/10</span>
           <span class="faq-chevron">&#9654;</span>
         </div>
         <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge direct">Direct</span>
-          <span class="faq-q">Should we use TypeScript or JavaScript for our library?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge transfer">Transfer</span>
-          <span class="faq-q">Building a design system: CSS-in-JS or traditional CSS?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge transfer">Transfer</span>
-          <span class="faq-q">Web app has gotten slow. Should we add more caching or rewrite components?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge transfer">Transfer</span>
-          <span class="faq-q">Should we build a single-page app or a multi-page app?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge voice">Voice</span>
-          <span class="faq-q">We're evaluating frameworks for a new project. What should we consider?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge voice">Voice</span>
-          <span class="faq-q">Why does modern web development feel so complicated?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
+          <div class="faq-scores">Differentiation <span>5/5</span> &middot; Competence <span>5/5</span></div>
+          <p style="margin-top:12px;font-weight:600;color:var(--gray-12)">Rich's Implementation:</p>
+          <p style="margin-top:8px;font-size:0.9rem;line-height:1.6">Single-file Svelte component (376 lines). Zero build complexity during development. Scoped CSS, built-in reactivity with $state rune, no external dependencies. Uses compiler to eliminate runtime overhead. <a href="eval2-demos/rich/" style="color:var(--blue);text-decoration:underline">Try live demo →</a></p>
+          <p style="margin-top:12px;font-weight:600;color:var(--green)">✓ Differentiation: Compiler-first approach, single-file simplicity, Svelte's reactive model vs React's virtual DOM.</p>
         </div></div>
       </div>
     </div>
