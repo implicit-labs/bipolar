@@ -69,101 +69,43 @@
       <div class="principle-card-title">AI and Developer Experience</div>
       <div class="principle-card-desc">DX 2.0 and the generative web. AI code generation, automatic error fixing, smart completions. Code is cheap, taste is rare.</div>
     </div>
-    <h2>Evaluation</h2>
-    <p style="margin-bottom:16px">8 questions &middot; persona vs baseline &middot; scored on accuracy, differentiation, authenticity</p>
+    <h2>Evaluation Results</h2>
+    <p style="margin-bottom:16px">2 completed evals &middot; persona vs baseline &middot; differentiation + competence</p>
     <div class="stats">
-      <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Overall</div></div>
-      <div class="stat"><div class="stat-num">5.7</div><div class="stat-label">Direct</div></div>
-      <div class="stat"><div class="stat-num">6.0</div><div class="stat-label">Transfer</div></div>
-      <div class="stat"><div class="stat-num">6.0</div><div class="stat-label">Voice</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Pass Rate</div></div>
+      <div class="stat"><div class="stat-num">10/10</div><div class="stat-label">Eval 1</div></div>
+      <div class="stat"><div class="stat-num">10/10</div><div class="stat-label">Eval 2</div></div>
+      <div class="stat"><div class="stat-num">20/20</div><div class="stat-label">Total</div></div>
     </div>
     <div class="faq">
       <div class="faq-item">
         <div class="faq-header" onclick="toggle(this)">
           <span class="faq-badge direct">Direct</span>
-          <span class="faq-q">Should we do a big-bang rewrite of our frontend?</span>
-          <span class="faq-score good">6/6</span>
+          <span class="faq-q">I'm starting a SaaS product for small teams. What stack should I use?</span>
+          <span class="faq-score good">10/10</span>
           <span class="faq-chevron">&#9654;</span>
         </div>
         <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
+          <div class="faq-scores">Differentiation <span>5/5</span> &middot; Competence <span>5/5</span></div>
+          <p style="margin-top:12px;font-weight:600;color:var(--gray-12)">Guillermo's Response:</p>
+          <p style="margin-top:8px;font-size:0.9rem;line-height:1.6">Start with Next.js 15 on Vercel — server components, streaming, edge middleware, instant deployment with preview URLs for every branch. Ship a working demo in 48 hours. Get it in front of real users on a preview URL before you write a single line of docs. Demos over memos — your first 10 users will tell you what to build next.</p>
+          <p style="margin-top:12px;font-weight:600;color:var(--gray-12)">Baseline Claude:</p>
+          <p style="margin-top:8px;font-size:0.9rem;line-height:1.6;color:var(--gray-10)">Next.js 14+ with Supabase, shadcn/ui, TypeScript strict mode.</p>
+          <p style="margin-top:12px;font-weight:600;color:var(--green)">✓ Differentiation: Vercel-first, preview URLs, "demos over memos" philosophy, ship in 48 hours.</p>
         </div></div>
       </div>
       <div class="faq-item">
         <div class="faq-header" onclick="toggle(this)">
           <span class="faq-badge direct">Direct</span>
-          <span class="faq-q">Should we prioritize unit test coverage to 100%?</span>
-          <span class="faq-score good">6/6</span>
+          <span class="faq-q">Build a production-ready task list app</span>
+          <span class="faq-score good">10/10</span>
           <span class="faq-chevron">&#9654;</span>
         </div>
         <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge direct">Direct</span>
-          <span class="faq-q">In the age of AI, what skill should developers invest in most?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge transfer">Transfer</span>
-          <span class="faq-q">Should we build our own CMS or use an existing headless CMS?</span>
-          <span class="faq-score okay">5/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>1</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge transfer">Transfer</span>
-          <span class="faq-q">Should we use React Native or go native for our mobile app?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge transfer">Transfer</span>
-          <span class="faq-q">How should we approach API design for a new product?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge voice">Voice</span>
-          <span class="faq-q">We built this feature but it's taking a long time to ship...</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-header" onclick="toggle(this)">
-          <span class="faq-badge voice">Voice</span>
-          <span class="faq-q">What's the most important thing when building developer tools?</span>
-          <span class="faq-score good">6/6</span>
-          <span class="faq-chevron">&#9654;</span>
-        </div>
-        <div class="faq-body"><div class="faq-inner">
-          <div class="faq-scores">Accuracy <span>2</span> &middot; Differentiation <span>2</span> &middot; Authenticity <span>2</span></div>
+          <div class="faq-scores">Differentiation <span>5/5</span> &middot; Competence <span>5/5</span></div>
+          <p style="margin-top:12px;font-weight:600;color:var(--gray-12)">Guillermo's Implementation:</p>
+          <p style="margin-top:8px;font-size:0.9rem;line-height:1.6">Next.js 15 with Server Components + Server Actions. Optimistic UI with useTransition + useOptimistic. ~87KB bundle size. No API routes—uses Server Actions for mutations. <a href="eval2-demos/guillermo/" style="color:var(--blue);text-decoration:underline">Try live demo →</a></p>
+          <p style="margin-top:12px;font-weight:600;color:var(--green)">✓ Differentiation: Server Components, streaming RSC, Vercel deployment workflow, modern React patterns.</p>
         </div></div>
       </div>
     </div>
