@@ -186,6 +186,27 @@
       font-size: 0.8rem;
     }
 
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .back-link:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateX(-4px);
+    }
+
+    .back-link::before {
+      content: "← ";
+    }
+
     .stats {
       display: flex;
       justify-content: space-around;
@@ -211,6 +232,8 @@
 </head>
 <body>
   <main class="container">
+    <a href="../../index.html" class="back-link">Back to Personas</a>
+
     <header class="header">
       <h1>Task List</h1>
       <p class="subtitle">

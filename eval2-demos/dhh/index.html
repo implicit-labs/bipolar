@@ -177,6 +177,23 @@
       font-size: 0.85rem;
     }
 
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #6c757d;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover {
+      color: #dc3545;
+    }
+
+    .back-link::before {
+      content: "← ";
+    }
+
     .badge {
       display: inline-block;
       padding: 4px 12px;
@@ -209,6 +226,8 @@
   <div class="turbo-indicator" id="turboIndicator"></div>
 
   <main class="container">
+    <a href="../../index.html" class="back-link">Back to Personas</a>
+
     <header class="header">
       <h1>
         Task List

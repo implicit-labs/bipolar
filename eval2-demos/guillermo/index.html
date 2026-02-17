@@ -184,6 +184,23 @@
       font-size: 0.75rem;
     }
 
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #0070f3;
+    }
+
+    .back-link::before {
+      content: "← ";
+    }
+
     .loading {
       text-align: center;
       padding: 20px;
@@ -198,6 +215,8 @@
 </head>
 <body>
   <main class="container">
+    <a href="../../index.html" class="back-link">Back to Personas</a>
+
     <header class="header">
       <h1>Task List</h1>
       <p class="subtitle">
