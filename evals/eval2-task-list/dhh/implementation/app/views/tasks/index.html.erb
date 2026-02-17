@@ -1,0 +1,36 @@
+<div class="container">
+  <header>
+    <h1>Tasks</h1>
+  </header>
+
+  <main>
+    <%# Form for creating new tasks %>
+    <%= form_with model: @task, class: "task-form" do |form| %>
+      <div class="form-group">
+        <%= form.text_field :title,
+            placeholder: "What needs to be done?",
+            autofocus: true,
+            class: "task-input" %>
+        <%= form.submit "Add Task", class: "btn-primary" %>
+      </div>
+
+      <% if @task.errors.any? %>
+        <div class="errors">
+          <% @task.errors.full_messages.each do |message| %>
+            <p><%= message %></p>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+
+    <%# Turbo Stream for real-time updates %>
+    <%= turbo_stream_from :tasks %>
+
+    <%# Task list - wrapped in a Turbo Frame for smooth updates %>
+    <%= turbo_frame_tag "tasks" do %>
+      <div class="tasks-list">
+        <%= render @tasks %>
+      </div>
+    <% end %>
+  </main>
+</div>

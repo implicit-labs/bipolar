@@ -1,0 +1,17 @@
+<%# Turbo Stream response for creating a task %>
+
+<%# 1. Prepend the new task to the list %>
+<%= turbo_stream.prepend "tasks", @task %>
+
+<%# 2. Clear the form input %>
+<%= turbo_stream.update "new_task" do %>
+  <%= form_with model: Task.new, class: "task-form" do |form| %>
+    <div class="form-group">
+      <%= form.text_field :title,
+          placeholder: "What needs to be done?",
+          autofocus: true,
+          class: "task-input" %>
+      <%= form.submit "Add Task", class: "btn-primary" %>
+    </div>
+  <% end %>
+<% end %>
