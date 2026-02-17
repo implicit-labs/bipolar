@@ -1,0 +1,26 @@
+<%# Each task is its own Turbo Frame - can update independently %>
+<%= turbo_frame_tag dom_id(task), class: "task-item #{'completed' if task.completed}" do %>
+  <div class="task-content">
+    <%# Checkbox to toggle completion - uses Turbo to submit without page reload %>
+    <%= button_to task_path(task),
+        method: :patch,
+        class: "task-checkbox",
+        form: { data: { turbo_frame: dom_id(task) } } do %>
+      <span class="checkbox <%= 'checked' if task.completed %>">
+        <%= task.completed ? "✓" : "" %>
+      </span>
+    <% end %>
+
+    <span class="task-title <%= 'strikethrough' if task.completed %>">
+      <%= task.title %>
+    </span>
+
+    <%# Delete button - removes task via Turbo %>
+    <%= button_to task_path(task),
+        method: :delete,
+        class: "task-delete",
+        form: { data: { turbo_confirm: "Are you sure?" } } do %>
+      ✕
+    <% end %>
+  </div>
+<% end %>
