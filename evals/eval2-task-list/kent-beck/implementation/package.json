@@ -1,0 +1,13 @@
+{
+  "name": "kent-beck-task-list",
+  "version": "1.0.0",
+  "description": "Task list built with TDD",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "test:watch": "node --test --watch"
+  },
+  "devDependencies": {
+    "jsdom": "^28.1.0"
+  }
+}
