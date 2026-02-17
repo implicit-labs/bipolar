@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task List - DHH's Approach</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #f8f9fa;
+      color: #212529;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .header {
+      border-bottom: 3px solid #dc3545;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #212529;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #6c757d;
+      font-size: 1rem;
+    }
+
+    .content {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      padding: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .task-form {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    input {
+      flex: 1;
+      background: #fff;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      padding: 12px 16px;
+      color: #212529;
+      font-size: 1rem;
+      transition: border-color 0.15s ease-in-out;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #dc3545;
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15);
+    }
+
+    button {
+      background: #dc3545;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.15s ease-in-out;
+    }
+
+    button:hover {
+      background: #c82333;
+    }
+
+    button:active {
+      background: #bd2130;
+    }
+
+    .task-list {
+      list-style: none;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      background: #fff;
+      transition: background-color 0.15s;
+    }
+
+    .task-item:hover {
+      background: #f8f9fa;
+    }
+
+    .task-item.completed {
+      background: #e9ecef;
+    }
+
+    .task-checkbox {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: #dc3545;
+    }
+
+    .task-text {
+      flex: 1;
+      font-size: 1.05rem;
+      color: #212529;
+      line-height: 1.5;
+    }
+
+    .task-item.completed .task-text {
+      text-decoration: line-through;
+      color: #6c757d;
+    }
+
+    .task-delete {
+      background: #6c757d;
+      color: #fff;
+      padding: 8px 20px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+    }
+
+    .task-delete:hover {
+      background: #5a6268;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 64px 20px;
+      color: #6c757d;
+      font-size: 1.1rem;
+      border: 2px dashed #dee2e6;
+      border-radius: 4px;
+    }
+
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #dee2e6;
+      text-align: center;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+
+    .footer p {
+      margin-bottom: 8px;
+    }
+
+    .tech-stack {
+      color: #adb5bd;
+      font-size: 0.85rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #dc3545;
+      color: #fff;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    .turbo-indicator {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #dc3545;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .turbo-indicator.active {
+      transform: scaleX(1);
+    }
+  </style>
+</head>
+<body>
+  <div class="turbo-indicator" id="turboIndicator"></div>
+
+  <main class="container">
+    <header class="header">
+      <h1>
+        Task List
+        <span class="badge">RAILS</span>
+      </h1>
+      <p class="subtitle">
+        DHH's Approach: Majestic monolith, server-rendered, minimal JavaScript
+      </p>
+    </header>
+
+    <section class="content">
+      <form class="task-form" id="taskForm">
+        <input
+          type="text"
+          id="taskInput"
+          name="task[text]"
+          placeholder="What needs to be done?"
+          required
+          autocomplete="off"
+        />
+        <button type="submit">Create Task</button>
+      </form>
+
+      <ul class="task-list" id="taskList">
+        <!-- Tasks will be rendered here -->
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>
+        <strong>The Majestic Monolith:</strong> One codebase, one deploy, one place to debug.
+        No microservices, no build step nonsense, just server-rendered HTML with a sprinkle of JavaScript.
+      </p>
+      <p class="tech-stack">
+        Demo - Vanilla HTML/CSS/JS (no React, no TypeScript, no bundler)
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    // Task state (simulating server-side persistence)
+    let tasks = JSON.parse(localStorage.getItem('tasks-dhh') || '[]')
+
+    // DOM elements
+    const form = document.getElementById('taskForm')
+    const input = document.getElementById('taskInput')
+    const taskList = document.getElementById('taskList')
+    const turboIndicator = document.getElementById('turboIndicator')
+
+    // Simulate Turbo Drive loading indicator
+    function showTurboIndicator() {
+      turboIndicator.classList.add('active')
+      setTimeout(() => turboIndicator.classList.remove('active'), 300)
+    }
+
+    // Render tasks (simulating server-side rendering)
+    function renderTasks() {
+      if (tasks.length === 0) {
+        taskList.innerHTML = `
+          <li class="empty-state">
+            No tasks yet. The database is empty.<br>
+            Add your first task above to get started.
+          </li>
+        `
+        return
+      }
+
+      // Render in the order they were created (server default)
+      taskList.innerHTML = tasks.map(task => `
+        <li class="task-item ${task.completed ? 'completed' : ''}" data-id="${task.id}">
+          <input
+            type="checkbox"
+            class="task-checkbox"
+            ${task.completed ? 'checked' : ''}
+            onchange="toggleTask(${task.id})"
+          />
+          <span class="task-text">${escapeHtml(task.text)}</span>
+          <button
+            class="task-delete"
+            onclick="deleteTask(${task.id})"
+          >
+            Destroy
+          </button>
+        </li>
+      `).join('')
+    }
+
+    // Create task (simulating Rails controller action)
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      showTurboIndicator()
+
+      const text = input.value.trim()
+      if (!text) return
+
+      // Simulate server round-trip
+      setTimeout(() => {
+        const newTask = {
+          id: Date.now(),
+          text,
+          completed: false,
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString()
+        }
+
+        tasks.push(newTask)
+        input.value = ''
+        saveTasks()
+        renderTasks()
+      }, 100)
+    })
+
+    // Toggle completion (simulating PATCH request)
+    window.toggleTask = function(id) {
+      showTurboIndicator()
+
+      setTimeout(() => {
+        const task = tasks.find(t => t.id === id)
+        if (task) {
+          task.completed = !task.completed
+          task.updated_at = new Date().toISOString()
+          saveTasks()
+          renderTasks()
+        }
+      }, 100)
+    }
+
+    // Delete task (simulating DELETE request)
+    window.deleteTask = function(id) {
+      if (!confirm('Are you sure you want to destroy this task?')) return
+
+      showTurboIndicator()
+
+      setTimeout(() => {
+        tasks = tasks.filter(t => t.id !== id)
+        saveTasks()
+        renderTasks()
+      }, 100)
+    }
+
+    // Persist to localStorage (simulating database)
+    function saveTasks() {
+      localStorage.setItem('tasks-dhh', JSON.stringify(tasks))
+    }
+
+    // XSS protection (like Rails' sanitize helper)
+    function escapeHtml(text) {
+      const div = document.createElement('div')
+      div.textContent = text
+      return div.innerHTML
+    }
+
+    // Initial render (simulating page load)
+    renderTasks()
+    input.focus()
+
+    // Log Rails-style info
+    console.log('[DHH] Task List loaded')
+    console.log('[DHH] No React. No TypeScript. No build step.')
+    console.log('[DHH] Just vanilla HTML, CSS, and a sprinkle of JavaScript.')
+  </script>
+</body>
+</html>
